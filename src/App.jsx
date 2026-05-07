@@ -1,39 +1,48 @@
-import { useState, useEffect } from "react";
-import { Button3 } from "./Button";
-import { PlayButton, UploadButton } from "./Button";
-import { Button5 } from "./Button";
-// import StoryTray from "./StoryTray";
+import { useState } from "react";
 
 function App() {
-  let time = useTime();
+  const ID = "manddo";
+  const PW = "1234";
 
+  const [login, setLogin] = useState({
+    id: "",
+    pw: "",
+  });
+
+  const handleIdChanged = (e) => {
+    setLogin((prev) => ({ ...prev, id: e.target.value }));
+  };
+
+  const handlePWChanged = (e) => {
+    setLogin((prev) => ({ ...prev, pw: e.target.value }));
+  };
+
+  const handleLoginClicked = () => {
+    if (ID === login.id && PW === login.pw) {
+      alert("로그인 성공!");
+      setLogin({ id: "", pw: "" });
+    } else {
+      alert("로그인 실패하였습니다.");
+    }
+  };
 
   return (
-    <>
-      <div style={{ width: "100%", height: "100vh", textAlign: "center", border: "5px solid red"}}>
-        <h1 style={{padding:"300px"}}>{time.toLocaleTimeString()}</h1>
-        <Button3 message={"playing!"}>Play Movie</Button3>
-        <Button3 message={"Null"}>Null</Button3>
-        <PlayButton movieName={"Kiki's Delivery Service"}></PlayButton>
-        <UploadButton></UploadButton>
-        <Button5 onSmash={() => alert("smash one")}>smash one</Button5>
-        <Button5 onSmash={() => alert("smash two")}>smash two</Button5>
-      </div>
-    </>
+    <main>
+      <input
+        type="text"
+        placeholder="아이디를 입력하세요."
+        onChange={handleIdChanged}
+        value={login.id}
+      ></input>
+      <input
+        type="text"
+        placeholder="비밀번호를 입력하세요."
+        onChange={handlePWChanged}
+        value={login.pw}
+      ></input>
+      <button onClick={handleLoginClicked}>Login</button>
+    </main>
   );
-}
-
-function useTime() {
-  const [time, setTime] = useState(() => new Date());
-
-  useEffect(() => {
-    const id = setInterval(() => {
-      setTime(new Date());
-    }, 1000);
-    return () => clearInterval(id);
-  }, []);
-
-  return time;
 }
 
 export default App;

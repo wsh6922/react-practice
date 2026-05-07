@@ -33,3 +33,19 @@ export function UploadButton() {
 export function Button5({ onSmash, children }) {
   return <button onClick={onSmash}>{children}</button>;
 }
+
+export function Button6() {
+  return <button onClick={(e) => {e.stopPropagation(); alert("Playing!")}}>Play Movie</button>
+}
+
+export function Formmed() {
+  return (
+    <form onSubmit={(e) => {
+      e.preventDefault();
+      alert("Submitting!");
+    }}>
+      <input></input>
+      <button>send</button>
+    </form>
+  )
+}
