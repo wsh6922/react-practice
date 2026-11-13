@@ -1,11 +1,11 @@
-import { useState, useRef } from "react";
+import { useRef, useState } from "react";
 
-function Stopwatch() {
+const Stopwatch = () => {
   const [startTime, setStartTime] = useState(null);
   const [now, setNow] = useState(null);
   const intervalRef = useRef(null);
 
-  function handleStart() {
+  const handleStart = () => {
     setStartTime(Date.now());
     setNow(Date.now());
 
@@ -13,24 +13,24 @@ function Stopwatch() {
     intervalRef.current = setInterval(() => {
       setNow(Date.now());
     }, 10);
-  }
+  };
 
-  function handleStop() {
+  const handleStop = () => {
     clearInterval(intervalRef.current);
-  }
+  };
 
-  let secondesPassed = 0;
+  let secondsPassed = 0;
   if (startTime != null && now != null) {
-    secondesPassed = (now - startTime) / 1000;
+    secondsPassed = (now - startTime) / 1000;
   }
 
   return (
     <>
-      <h1>Time passed: {secondesPassed.toFixed(3)}</h1>
+      <h1>Time passed: {secondsPassed.toFixed(3)}</h1>
       <button onClick={handleStart}>Start</button>
       <button onClick={handleStop}>Stop</button>
     </>
   );
-}
+};
 
 export default Stopwatch;

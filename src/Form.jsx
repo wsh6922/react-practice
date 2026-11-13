@@ -1,46 +1,15 @@
-import { useState } from "react";
+import { useRef } from "react";
 
-function Form() {
-  const [person, setPerson] = useState({
-    firstName: "Barbara",
-    lastName: "Hepworth",
-    email: "bhepworth@sculpture.com",
-  });
+export default function Form() {
+  const inputRef = useRef(null);
 
-  function handleFirstNameChange(e) {
-    setPerson({ ...person, firstName: e.target.value });
-  }
-
-  function handleLastNameChange(e) {
-    setPerson({ ...person, lastName: e.target.value });
-  }
-
-  function handleEmailChange(e) {
-    setPerson({ ...person, email: e.target.value });
-  }
-
+  const handleClick = () => {
+    inputRef.current.focus();
+  };
   return (
     <>
-      <label>
-        First name:
-        <input
-          value={person.firstName}
-          onChange={handleFirstNameChange}
-        ></input>
-      </label>
-      <label>
-        Last name:
-        <input value={person.lastName} onChange={handleLastNameChange} />
-      </label>
-      <label>
-        Email:
-        <input value={person.email} onChange={handleEmailChange} />
-      </label>
-      <p>
-        {person.firstName} {person.lastName} ({person.email})
-      </p>
+      <input ref={inputRef} />
+      <button onClick={handleClick}>Focus the input</button>
     </>
   );
 }
-
-export default Form;

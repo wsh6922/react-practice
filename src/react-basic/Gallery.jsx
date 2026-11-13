@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { sculptureList } from "./payload/data";
+import { sculptureList } from "../payload/data";
 import { useState } from "react";
 
 const Section = styled.section`
@@ -28,7 +28,7 @@ function Gallery() {
   let sculpture = sculptureList[index];
   return (
     <>
-        <Section>
+      <Section>
         <button onClick={handleNextClick}>Next</button>
         <h2>
           <i>{sculpture.name}</i>

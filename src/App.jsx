@@ -1,30 +1,15 @@
-import { UseRef, Form } from "./UseRef";
-import Stopwatch from "./Stopwatch";
-import { UseEffect, UseEffect2 } from "./useEffect";
-import UseMemo from "./UseMemo";
-import Game from "./Game";
+import { Link, Outlet } from "react-router";
 
-function App() {
-  let isBool = false;
-
-  if (isBool) {
-    return (
-      <>
-        <UseRef></UseRef>
-        <Stopwatch></Stopwatch>
-        <Form></Form>
-        <br></br>
-        <UseEffect></UseEffect>
-        <br></br>
-        <UseEffect2></UseEffect2>
-        <UseMemo></UseMemo>;
-      </>
-    );
-  } else {
-    return (
-      <Game></Game>
-    )
-  }
-}
+const App = () => {
+  return (
+    <div style={{ padding: "20px" }}>
+      <nav>
+        <Link to="/">Home</Link> | <Link to="/posts">Posts</Link>
+      </nav>
+      <hr />
+      <Outlet />
+    </div>
+  );
+};
 
 export default App;
