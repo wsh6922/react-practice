@@ -58,4 +58,4 @@ let initialStories = [
   { id: 1, label: "Taylor's Story" },
 ];
 
-console.log(...initialStories)
+console.log(...initialStories);

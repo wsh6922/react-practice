@@ -46,11 +46,11 @@ function UseEffect2() {
   //     );
   //   }, []);
 
-//   useEffect(() => {
-//     alert(
-//       "dependencies 의존성 배열이 없기 때문에 모든 렌더링, 리렌더링마다 동작",
-//     );
-//   });
+  //   useEffect(() => {
+  //     alert(
+  //       "dependencies 의존성 배열이 없기 때문에 모든 렌더링, 리렌더링마다 동작",
+  //     );
+  //   });
 
   return (
     <div>

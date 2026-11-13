@@ -89,7 +89,7 @@ function App() {
 
     const peopleList = people.map((people) => <li>{people}</li>);
     const chemists = people2.filter(
-      (people) => people.profession === "chemist",
+      (people) => people.profession === "chemist"
     );
 
     // const chemistList = chemists.map((people) => (

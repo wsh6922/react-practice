@@ -21,9 +21,7 @@ function App() {
       </>
     );
   } else {
-    return (
-      <Game></Game>
-    )
+    return <Game></Game>;
   }
 }
 

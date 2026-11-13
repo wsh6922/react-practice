@@ -8,7 +8,7 @@ import styled from "styled-components";
 // import StoryTray from "./StoryTray";
 
 const Page = styled.div`
-    display: flex
+  display: flex;
 `;
 
 function App() {
@@ -48,8 +48,6 @@ function App() {
       </>
     );
   } else {
-
-    
     return (
       <>
         <Page>

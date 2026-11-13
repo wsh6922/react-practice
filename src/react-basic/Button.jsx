@@ -35,17 +35,28 @@ export function Button5({ onSmash, children }) {
 }
 
 export function Button6() {
-  return <button onClick={(e) => {e.stopPropagation(); alert("Playing!")}}>Play Movie</button>
+  return (
+    <button
+      onClick={(e) => {
+        e.stopPropagation();
+        alert("Playing!");
+      }}
+    >
+      Play Movie
+    </button>
+  );
 }
 
 export function Formmed() {
   return (
-    <form onSubmit={(e) => {
-      e.preventDefault();
-      alert("Submitting!");
-    }}>
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        alert("Submitting!");
+      }}
+    >
       <input></input>
       <button>send</button>
     </form>
-  )
+  );
 }

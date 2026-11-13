@@ -6,7 +6,7 @@ const App7 = () => {
       <p>This child is placed in the parent div.</p>
       {createPortal(
         <p>This child is placed in the document body.</p>,
-        document.body,
+        document.body
       )}
     </div>
   );

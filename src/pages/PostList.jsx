@@ -79,7 +79,7 @@ const PostList = () => {
               </button>
             </div>
           </div>,
-          document.body,
+          document.body
         )}
     </div>
   );

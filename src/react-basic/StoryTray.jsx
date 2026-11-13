@@ -1,9 +1,9 @@
 function StoryTray({ stories }) {
-  let storiesToDisplay = stories.slice();   
+  let storiesToDisplay = stories.slice();
 
   storiesToDisplay.push({
-    id: 'create',
-    label: 'Create Story'
+    id: "create",
+    label: "Create Story",
   });
 
   return (
